@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: phpdb
+      MYSQL_USER: phpuser
+      MYSQL_PASSWORD: phppass
+    volumes:
+      - php_mysql_data:/var/lib/mysql
+    networks:
+      - web
+
+volumes:
+  php_mysql_data:
